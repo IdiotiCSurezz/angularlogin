@@ -1,0 +1,73 @@
+<!-- <h2 class="text-center">Registration</h2>
+<div class="row">
+<div class="col-md-3">
+</div>
+<div class="col-md-6 col-md-offset-3">
+<div class="jumbotron">
+<form [formGroup]="angForm" (ngSubmit)="postdata(angForm)" autocomplete="off" >
+<div class="form-group">
+<label for="name">Name</label>
+<input type="text" name="name" formControlName="name" autocomplete="off" class="form-control input-sm" placeholder="Name">
+</div>
+<div class="form-group">
+<label for="email">Email</label>
+<input type="email" name="email" formControlName="email" autocomplete="off" class="form-control input-sm" placeholder="Email">
+</div>
+<div class="form-group">
+<label for="Password">Password</label>
+<input type="password" name="Password" formControlName="password" autocomplete="off" class="form-control input-sm" placeholder="Password">
+</div>
+<button type="submit" class="btn btn-success" >Register</button>
+</form>
+</div>
+</div>
+<div class="col-md-3">
+</div>
+</div> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Krishya Admin</title>
+</head>
+<body>
+
+<div class="signupform">
+	<div class="container">
+		<!-- main content -->
+		<div class="agile_info">
+			<div class="w3l_form">
+				<div class="left_grid_info">
+					<h1>Manage Krishya Business Account</h1>
+					<p>Business account </p>
+					<img src="assets/images/image.jpg" alt="" />
+				</div>
+			</div>
+			<div class="w3_info">
+				<h2>Register to Krishya</h2>
+				<p>Enter your details to Register</p>
+				<form [formGroup]="angForm" (ngSubmit)="postdata(angForm)" autocomplete="off" >
+                    <label>Name</label>
+					<div class="input-group">
+						<span class="fa fa-envelope" aria-hidden="true"></span>
+						<input type="text" name="text" formControlName="name" autocomplete="off" class="form-control input-sm" placeholder="Name">
+					</div>
+					<label>Email</label>
+					<div class="input-group">
+						<span class="fa fa-envelope" aria-hidden="true"></span>
+						<input type="email" name="email" formControlName="email" autocomplete="off" class="form-control input-sm" placeholder="Email">
+					</div>
+					<label>Password</label>
+					<div class="input-group">
+						<span class="fa fa-lock" aria-hidden="true"></span>
+						<input type="password" name="Password" formControlName="password" autocomplete="off" class="form-control input-sm" placeholder="Password">
+					</div> 
+						<button class="btn btn-danger btn-block" type="submit">Register</button >  
+				</form>
+</div>
+		</div>
+	</div>
+</div>
+	
+</body>
+</html>
