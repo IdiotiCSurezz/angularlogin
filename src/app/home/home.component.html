@@ -52,16 +52,24 @@
 			</div>
 			<div class="w3_info" align="center">
 				<h2>Krishya Home Page</h2>
-				<!-- <p>Enter your details to login</p> -->
-				<form  >
+				<br>
+				<h2 *ngIf="loginbtn" routerLink="login" routerLinkActive="active" type="submit">Login</h2>
+				<br>
+				<h2 *ngIf="loginbtn" routerLink="registration" routerLinkActive="active" type="submit">Register</h2>
 				
-	<button class="btn btn-danger btn-block" *ngIf="loginbtn" routerLink="login" routerLinkActive="active" type="submit">Login</button >  
+				<!-- <p>Enter your details to login</p> -->
+				<!-- <form  >
+					<br>
+		
+
+					<h3 *ngIf="loginbtn" routerLink="login" routerLinkActive="active" type="submit">Login</h3>
+				
+	<button *ngIf="loginbtn" routerLink="login" routerLinkActive="active" type="submit">Login</button >  
                 <br>
-                <br>
-                
-        <button class="btn btn-danger btn-block" *ngIf="loginbtn" routerLink="registration" routerLinkActive="active" type="submit">Register</button >  
-	
-				</form>
+				<br>
+				<h3 *ngIf="loginbtn" routerLink="registration" routerLinkActive="active" type="submit">Register</h3>
+        <button *ngIf="loginbtn" routerLink="registration" routerLinkActive="active" type="submit">Register</button >  
+				</form> -->
 				</div>
 		</div>
 	</div>
