@@ -37,7 +37,7 @@ error => {
 });
 }
 
-get email() { return this.angForm.get('email'); }
-get password() { return this.angForm.get('password'); }
-get name() { return this.angForm.get('name'); }
+// get email() { return this.angForm.get('email'); }
+// get password() { return this.angForm.get('password'); }
+// get name() { return this.angForm.get('name'); }
 }

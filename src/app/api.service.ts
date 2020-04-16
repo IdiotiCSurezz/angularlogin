@@ -1,7 +1,8 @@
 import { Injectable, Output, EventEmitter } from '@angular/core';
 import { map } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
-import { Users } from './users';
+import { Users } from './model/users';
+import { Arrival } from './model/arrival';
 
 @Injectable({
 providedIn: 'root'
@@ -29,6 +30,20 @@ return this.httpClient.post<any>(this.baseUrl + '/register.php', { name,email, p
 return Users;
 }));
 }
+
+public arrivalentry(eta_date,in_agent,cont_no,im_name,sh_name,c_lcl_fcl,con_type,con_20,con_40,cargo_name,
+    liner_name,bl_no,bl_date,hbl_no,fr_days,load_port,vessel_name,doc_type,voy_no,cfs) {
+
+    return this.httpClient.post<any>(this.baseUrl + '/arrivalentry.php', { eta_date,in_agent, cont_no,im_name,sh_name
+    ,c_lcl_fcl,con_type,con_20,con_40,cargo_name,liner_name,bl_no,bl_date,hbl_no,fr_days,load_port,vessel_name,
+    doc_type,voy_no,cfs })
+
+    .pipe(map(Arrival => {
+        alert("Success")
+    return Arrival;
+    }));
+
+    }
 
 //token
 setToken(token: string) {

@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Krishya Admin</title>
+</head>
+<body>
+
+<div fxLayout="column"  class="krl-row"  [ngClass.xs]="'components-container-xs'"  fxLayoutGap="20px">
+  <!-- <form [formGroup]="formGroup" (ngSubmit)="onSubmit(formGroup.value)" class="form"> -->
+    <!-- <div fxLayout="column"  class="components-container-gt-xs"  [ngClass.xs]="'components-container-xs'"  fxLayoutGap="20px"> -->
+	<!-- <div fxFlex class="form-component-holder mat-elevation-z4"> -->
+    <div fxFlex class="krl-col">
+  <!-- <form formGroup="formGroup1" ngSubmit="postdata()"> -->
+    <!-- <form formGroup="formGroup1" ngSubmit="postdata1(formGroup1.value)" novalidate> -->
+    <form formGroup = "formGroup1" (ngSubmit)="postdata()">
+    <!-- <form formGroup1="ngForm" (ngSubmit)="postdata(formGroup1.value)" autocomplete="off" > -->
+
+        <!-- <div class="container">
+            <mat-toolbar color="primary">
+                <span class="fill-remaining-space">Arrival Entry Form</span>
+                <span flex></span>
+              <div fxLayout="row" fxLayout="row wrap">
+                <div class="form-element">
+                  <button  mat-raised-button color="primary" type="submit" class="button" [disabled]="!formGroup.valid" >Submit Form</button>
+                </div>
+              </div>
+              </mat-toolbar>
+        </div> -->
+
+<div class="container">
+            <mat-toolbar >
+                <span class="fill-remaining-space">Arrival Entry Form</span>
+                <span class="example-spacer"></span>
+              	<span flex></span>
+                <div align="right" class="example-container" fxFlex.lt-sm="100" fxFlex.sm="100" fxFlex.md="33">
+                  <div class="form-group">
+                    <!-- [disabled]="!formGroup.valid" -->
+                    <button type="submit" mat-raised-button color="primary" >Submit Form</button>
+                  </div>
+                </div>
+            </mat-toolbar>
+        </div>
+
+        <div fxLayout="column"  class="krl-form-horizontal" fxLayoutAlign="space-around stretch" style="background-color: white;">
+        
+          <div fxLayout="row" fxLayout="row wrap" fxFlex="50" fxFlex.lt-sm="100">
+              <div class="example-container" fxFlex="33" fxFlex.lt-sm="100" fxFlex.sm="100" fxFlex.md="33">
+                  <mat-form-field appearance="outline" class="form-element">
+                      <mat-label>Arrived/ETA date</mat-label>
+                      <input  matInput [matDatepicker]="picker" name="etaDate" formControlName="etaDate" required>
+                      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                      <mat-datepicker #picker></mat-datepicker>
+                      <mat-error *ngIf="checkError('etaDate', 'required')">ETA date is required</mat-error>
+                    </mat-form-field>
+              </div>
+    
+              <div class="example-container" fxFlex="33" fxFlex.lt-sm="100" fxFlex.sm="100" fxFlex.md="33">
+                  <mat-form-field class="form-element" appearance="outline">
+                      <mat-label>Intending Agent</mat-label>
+                      <mat-select name="intendingAgent" formControlName="intendingAgent" required>
+                        <mat-option>None</mat-option>
+                        <mat-option value="option1">General</mat-option>
+                        <mat-option value="option2">Nava Star</mat-option>
+                        <mat-option value="option3">Vnmad Firm</mat-option>
+                        <mat-option value="option3">SM International</mat-option>
+                      </mat-select>
+                      <mat-error *ngIf="checkError('intendingAgent', 'required')">Please choose indending agent is required</mat-error>
+    
+                    </mat-form-field>
+              </div>
+          
+              <div class="example-container" fxFlex="33" fxFlex.lt-sm="100" fxFlex.sm="100" fxFlex.md="33">
+                  <mat-form-field appearance="outline" class="form-element">
+                      <mat-label class="form-label">Contract Number</mat-label>
+                      <input matInput name="contractNumber" formControlName="contractNumber" required >
+                      <mat-error *ngIf="checkError('contractNumber', 'required')">Contract Number Name is required</mat-error>  
+                    </mat-form-field>
+              </div>
+          </div>
+    
+          <div fxLayout="row" fxLayout="row wrap">
+              <div class="example-container" fxFlex="33" fxFlex.lt-sm="100" fxFlex.sm="100" fxFlex.md="33">
+                  <mat-form-field appearance="outline" class="form-element">
+                      <mat-label class="form-label">Importer Name</mat-label>
+                      <input matInput name="importerName" formControlName="importerName" required >
+                      <mat-error *ngIf="checkError('importerName', 'required')">Importer Name is required</mat-error>
+                    </mat-form-field>
+              </div>
+              
+              <div class="example-container" fxFlex="33" fxFlex.lt-sm="100" fxFlex.sm="100" fxFlex.md="33">
+                  <mat-form-field appearance="outline" class="form-element">
+                      <mat-label class="form-label">Shipper Name</mat-label>
+                      <input matInput name="shipperName" formControlName="shipperName" required>
+                      <mat-error *ngIf="checkError('shipperName', 'required')">ShipperName is required</mat-error>
+    
+                    </mat-form-field>
+              </div>
+           
+              <div class="example-container" fxFlex="33" fxFlex.lt-sm="100" fxFlex.sm="100" fxFlex.md="33">
+                  <mat-form-field class="form-element" appearance="outline">
+                      <mat-label>Choose the LCL/FCL</mat-label>
+                      <mat-select name="lclfcl" formControlName="lclfcl" required> 
+                        <mat-option>None</mat-option>
+                        <mat-option value="option1">LCL</mat-option>
+                        <mat-option value="option2">FCL</mat-option>
+                      </mat-select>
+                      <mat-error *ngIf="checkError('lclfcl', 'required')">Please Choose LCL or FCL is required</mat-error>
+    
+                    </mat-form-field>
+              </div>
+          </div>
+    
+          <div fxLayout="row" fxLayout="row wrap">
+              <div class="example-container" fxFlex="33" fxFlex.lt-sm="100" fxFlex.sm="100" fxFlex.md="33">
+                  <mat-form-field class="form-element" appearance="outline">
+                      <mat-label>Container Type</mat-label>
+                      <mat-select name='containerType' formControlName='containerType' required>
+                        <mat-option>None</mat-option>
+                        <mat-option value="option1">20"</mat-option>
+                        <mat-option value="option2">40"</mat-option>
+                        <mat-option value="option3">Both</mat-option>
+                        <mat-option value="option3">Other</mat-option>
+                      </mat-select>
+                      <mat-error *ngIf="checkError('containerType', 'required')">Please Choose container is required</mat-error>
+                    </mat-form-field>
+              </div>
+              <div class="example-container" fxFlex="33" fxFlex.lt-sm="100" fxFlex.sm="100" fxFlex.md="33">
+                  <mat-form-field appearance="outline" class="form-element">
+                      <mat-label class="form-label">20" Container</mat-label>
+                      <input matInput name="twentyinch" formControlName="twentyinch" required>
+                      <mat-error *ngIf="checkError('twentyinch', 'required')">number of 20" container is required</mat-error>
+    
+                    </mat-form-field>
+              </div>
+              <div class="example-container" fxFlex="33" fxFlex.lt-sm="100" fxFlex.sm="100" fxFlex.md="33">
+                  <mat-form-field appearance="outline" class="form-element">
+                      <mat-label class="form-label">40" Container</mat-label>
+                      <input matInput name="fourtyinch" formControlName="fourtyinch" required>
+                      <mat-error *ngIf="checkError('fourtyinch', 'required')">number of 40" container is required</mat-error>
+    
+                    </mat-form-field>
+              </div>
+          </div>
+    
+          <div fxLayout="row" fxLayout="row wrap">
+              <div class="example-container" fxFlex="33" fxFlex.lt-sm="100" fxFlex.sm="100" fxFlex.md="33" >
+                  <mat-form-field appearance="outline" class="form-element">
+                      <mat-label class="form-label">Cargo Name</mat-label>
+                      <input matInput name="cargoName" formControlName="cargoName" required>
+                      <mat-error *ngIf="checkError('cargoName', 'required')">CargoName is required</mat-error>
+    
+                    </mat-form-field>
+              </div>
+              
+              <div class="example-container" fxFlex="33" fxFlex.lt-sm="100" fxFlex.sm="100" fxFlex.md="33">
+                  <mat-form-field appearance="outline" class="form-element">
+                      <mat-label class="form-label">Liner Name</mat-label>
+                      <input matInput name="linerName" formControlName="linerName" required>
+                      <mat-error *ngIf="checkError('linerName', 'required')">Liner Name is required</mat-error>
+    
+                    </mat-form-field>
+              </div>
+              <div class="example-container" fxFlex="33" fxFlex.lt-sm="100" fxFlex.sm="100" fxFlex.md="33">
+                  <mat-form-field appearance="outline" class="form-element">
+                      <mat-label class="form-label">BL Number</mat-label>
+                      <input matInput name="blnumber" formControlName="blnumber" required>
+                      <mat-error *ngIf="checkError('blnumber', 'required')">BL Number is required</mat-error>
+    
+                    </mat-form-field>
+              </div>  
+          </div>
+    
+          <div fxLayout="row" fxLayout="row wrap">
+              <div class="example-container" fxFlex="33" fxFlex.lt-sm="100" fxFlex.sm="100" fxFlex.md="33">
+                  <mat-form-field appearance="outline" class="form-element">
+                      <mat-label>BL date</mat-label>
+                      <input matInput [matDatepicker]="picker1" name="blDate" formControlName="blDate" required>
+                      <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                      <mat-datepicker #picker1></mat-datepicker>
+                      <mat-error *ngIf="checkError('blDate', 'required')">BL date is required</mat-error>
+    
+                    </mat-form-field>
+              </div>
+              
+              <div class="example-container" fxFlex="33" fxFlex.lt-sm="100" fxFlex.sm="100" fxFlex.md="33">
+                  <mat-form-field appearance="outline" class="form-element">
+                      <mat-label class="form-label">HBL Number</mat-label>
+                      <input matInput name="hblNumber" formControlName="hblNumber" required>
+                      <mat-error *ngIf="checkError('hblNumber', 'required')">HBL Number is required</mat-error>
+    
+                    </mat-form-field>
+              </div>
+              <div class="example-container" fxFlex="33" fxFlex.lt-sm="100" fxFlex.sm="100" fxFlex.md="33">
+                  <mat-form-field appearance="outline" class="form-element">
+                      <mat-label class="form-label">FreeDays</mat-label>
+                      <input matInput name="freeDays" formControlName="freeDays" required>
+                      <mat-error *ngIf="checkError('freeDays', 'required')">FreeDays is required</mat-error>
+    
+                    </mat-form-field>
+              </div>
+          </div>
+    
+          <div fxLayout="row" fxLayout="row wrap">
+              <div class="example-container" fxFlex="33" fxFlex.lt-sm="100" fxFlex.sm="100" fxFlex.md="33">
+                  <mat-form-field appearance="outline" class="form-element">
+                      <mat-label class="form-label">Load Port</mat-label>
+                      <input matInput name="loadPort" formControlName="loadPort" required>
+                      <mat-error *ngIf="checkError('loadPort', 'required')">Loadport is required</mat-error>
+    
+                    </mat-form-field>
+              </div>
+    
+              <!-- <div class="example-container" fxFlex.lt-sm="100" fxFlex.sm="100" fxFlex.md="33">
+                <mat-form-field appearance="outline" class="form-element">
+                  <mat-label>Username</mat-label>
+                  <input matInput placeholder="Simple placeholder" formControlName="username"
+                         required>
+                  <mat-error>Please enter username
+                  </mat-error>
+                </mat-form-field>
+              </div> -->
+              
+              <div class="example-container" fxFlex="33" fxFlex.lt-sm="100" fxFlex.sm="100" fxFlex.md="33">
+                  <mat-form-field appearance="outline" class="form-element">
+                      <mat-label class="form-label">Vessel Name</mat-label>
+                      <input matInput name="vesselName" formControlName="vesselName" required>
+                      <mat-error *ngIf="checkError('vesselName', 'required')">Vessel Name is required</mat-error>
+                    </mat-form-field>
+              </div>
+    
+              <div class="example-container" fxFlex="33" fxFlex.lt-sm="100" fxFlex.sm="100" fxFlex.md="33">
+                  <mat-form-field class="form-element" appearance="outline">
+                      <mat-label>Document Type</mat-label>
+                      <mat-select name="documentType" formControlName="documentType" required>
+                        <mat-option>None</mat-option>
+                        <mat-option value="option1">Copy Document</mat-option>
+                        <mat-option value="option2">Original Document</mat-option>
+                        <mat-option value="option3">Phone</mat-option>
+                        <mat-option value="option3">Other</mat-option>
+                      </mat-select>
+                      <mat-error *ngIf="checkError('documentType', 'required')">Please Choose document type is required</mat-error>
+    
+                    </mat-form-field>
+              </div>
+          </div>
+    
+          <div fxLayout="row" fxLayout="row wrap">
+     
+              <div class="example-container" fxFlex="33" fxFlex.lt-sm="100" fxFlex.sm="100" fxFlex.md="33">
+                  <mat-form-field appearance="outline" class="form-element">
+                      <mat-label class="form-label">Voyage.No</mat-label>
+                      <input matInput name="voyageNo" formControlName="voyageNo" required>
+                      <mat-error *ngIf="checkError('voyageNo', 'required')">VoyageNo is required</mat-error>
+    
+                    </mat-form-field>
+              </div>
+    
+              <div class="example-container" fxFlex="33" fxFlex.lt-sm="100" fxFlex.sm="100" fxFlex.md="33">
+                  <mat-form-field appearance="outline" class="form-element">
+                      <mat-label class="form-label">CFS</mat-label>
+                      <input matInput name="cfs" formControlName="cfs" required>
+                      <mat-error *ngIf="checkError('cfs', 'required')">CFS is required</mat-error>
+                    </mat-form-field>
+              </div>
+          </div>
+
+              <div fxLayout="row" fxLayout="row wrap">
+                <div class="form-element">
+                  <button  mat-raised-button color="primary" type="submit" class="button">Submit Form</button>
+                </div>
+                
+              </div>
+              
+              <!-- <button type="submit" class="button" mat-raised-button color="primary" >Submit Form</button> -->
+              
+          <!-- </div> -->
+    
+      </div>        
+    
+ </form>
+ 
+
+
+    </div>
+      
+<!-- </form> -->
+</div>
+</body>
+</html>
+
+
