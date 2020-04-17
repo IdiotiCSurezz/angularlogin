@@ -39,7 +39,8 @@ public arrivalentry(eta_date,in_agent,cont_no,im_name,sh_name,c_lcl_fcl,con_type
     doc_type,voy_no,cfs })
 
     .pipe(map(Arrival => {
-        alert("Success")
+        // alert("Success")
+        console.log('data successfully added into the server..');
     return Arrival;
     }));
 

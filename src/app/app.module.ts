@@ -16,7 +16,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AppComponent,
     HomeComponent,
     LoginComponent,
-    RegisterComponent,
+    RegisterComponent
     //  MaterialModule
   ],
   imports: [
@@ -24,10 +24,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AppRoutingModule,
     // MaterialModule,
     FormsModule,
-HttpClientModule,
-ReactiveFormsModule,
-DefaultModule,
-BrowserAnimationsModule
+    HttpClientModule,
+    ReactiveFormsModule,
+    DefaultModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

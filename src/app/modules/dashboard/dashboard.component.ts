@@ -45,11 +45,12 @@ export class DashboardComponent implements OnInit {
   }
 
   ngOnInit() {
-    // this.createForm();
+    this.createForm();
     // this.onSubmit();
   }
   createForm() {
     this.formGroup1 = new FormGroup({
+ 
       etaDate: new FormControl ('', [Validators.required]),
       intendingAgent: new FormControl('',[Validators.required]),
       contractNumber : new FormControl('', [Validators.required]),
@@ -71,7 +72,6 @@ export class DashboardComponent implements OnInit {
       voyageNo: new FormControl('',[Validators.required]),
       cfs: new FormControl('',[Validators.required]),
 
-
     });
   }
 
@@ -82,11 +82,11 @@ export class DashboardComponent implements OnInit {
   get f() { return this.formGroup1.controls; }
 
   postdata1(formGroup1) {
-    alert(':-)')
+    // alert(':-)')
     this.submitted = true;
     // stop here if form is invalid
     if (formGroup1.invalid) {
-      alert('Error!! :-(')
+      alert('Please Fill All Fields...!')
         return;
     }
     this.dataService.arrivalentry(formGroup1.value.etaDate,formGroup1.value.intendingAgent,
@@ -99,17 +99,18 @@ export class DashboardComponent implements OnInit {
 .pipe(first())
 .subscribe(
 data => {
-this.router.navigate(['import']);
+alert('Data Added Successfully')
+window.location.reload();
+// this.router.navigate(['dashboard']);
 },
 error => {
 });
-
-    alert('SUCCESS!! :-)')
 }
 
 postdata()
 {
-  alert('SUCCESS!! :-)')
+  //alert('SUCCESS!! :-)');
+  console.log('success');
 }
 
 }

@@ -12,6 +12,7 @@ import { SharedModule } from 'src/app/shared/shared.module';
 // import {  MatTableModule } from '@angular/material/table';
 import { Material1Module } from './material1.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     RouterModule,
     Material1Module,
     SharedModule,
+    FormsModule,
+    ReactiveFormsModule,
     // MatSidenavModule,
     // MatDividerModule,
     FlexLayoutModule,
