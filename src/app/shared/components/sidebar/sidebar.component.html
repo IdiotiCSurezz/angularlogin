@@ -1,35 +1,78 @@
-<mat-nav-list>
-    <div class="profile-card">
-        <img src="assets/images/krishya.png" alt="Krishya">
-        <div class="header">
-            <h3>Krishya IT</h3>
-            <h4>it@krishya.co</h4>
+     <mat-nav-list>
+        <div class="profile-card">
+            <img src="assets/images/krishya.png" alt="Krishya">
+            <div class="header">
+                <h3>Krishya IT</h3>
+                <h4>it@krishya.co</h4>
+            </div>
         </div>
-    </div>
+    
+        <mat-divider></mat-divider>
+    
+        <a mat-list-item routerLinkActive="list-item-active" routerLink="/dashboard">
+            <mat-icon>import_contacts</mat-icon>
+            Dashboard</a>
+        <a mat-list-item routerLinkActive="list-item-active" routerLink="/import">
+            <mat-icon>contact_phone</mat-icon>
+            Import</a>
+    
+    
+        <mat-divider></mat-divider>
+    
+    </mat-nav-list>
 
-    <mat-divider></mat-divider>
-
-    <!-- <h2 matSubheader>Pages</h2> -->
-    <a mat-list-item routerLinkActive="list-item-active" routerLink="/dashboard">
-        <mat-icon>import_contacts</mat-icon>
-        Dashboard</a>
-    <a mat-list-item routerLinkActive="list-item-active" routerLink="/import">
-        <mat-icon>contact_phone</mat-icon>
-        Import</a>
-
-
-    <mat-divider></mat-divider>
-
-    <!-- <h2 matSubheader>Tools</h2>
-
-    <a mat-list-item routerLinkActive="list-item-active" routerLink="/contacts">
-        <mat-icon>import_contacts</mat-icon>
-        Contacts
-    </a>
-
-    <a mat-list-item routerLinkActive="list-item-active" routerLink="/contacts">
-        <mat-icon>contact_phone</mat-icon>
-        Leads
-    </a> -->
-
-</mat-nav-list>
+    <!-- <mat-nav-list class="sidenav"> 
+        <a mat-list-item>Main</a>
+        <mat-accordion>
+          <mat-expansion-panel class="mat-elevation-z0">
+            <mat-expansion-panel-header
+              collapsedHeight="48px"
+              expandedHeight="48px"
+            >
+              <mat-panel-title>
+                Import
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <a mat-list-item>
+              <div class="sublist-1">
+                Dashboard
+              </div>
+            </a>
+            <a mat-list-item>
+              <div class="sublist-1">
+                Data Entry
+              </div>
+            </a>
+            <a mat-list-item>
+              <div class="sublist-1">
+                Reports
+              </div>
+            </a>
+          </mat-expansion-panel>
+          <mat-expansion-panel class="mat-elevation-z0">
+            <mat-expansion-panel-header
+              collapsedHeight="48px"
+              expandedHeight="48px"
+            >
+              <mat-panel-title>
+                Export
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <a mat-list-item>
+              <div class="sublist-1">
+                Dashboard
+              </div>
+            </a>
+            <a mat-list-item>
+              <div class="sublist-1">
+                Data Entry
+              </div>
+            </a>
+            <a mat-list-item>
+              <div class="sublist-1">
+                Reports
+              </div>
+            </a>
+          </mat-expansion-panel>
+        </mat-accordion>
+      </mat-nav-list> -->
