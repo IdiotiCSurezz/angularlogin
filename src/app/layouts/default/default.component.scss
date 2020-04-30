@@ -30,6 +30,14 @@ mat-drawer-content {
   right: 0;
 }
 
+.example-mat-toolbar {
+  position: sticky;
+  position: -webkit-sticky; /* For macOS/iOS Safari */
+  top: 0; 
+  z-index: 10;
+}
+
+
 .is-mobile .toolbar {
   position: fixed;
   height: 56px;

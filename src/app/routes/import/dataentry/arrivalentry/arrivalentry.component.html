@@ -21,17 +21,14 @@
               </mat-toolbar>
         </div> -->
 
-        <div>
+        <div >
             <mat-toolbar >
+              <mat-toolbar-row>
                 <span class="fill-remaining-space">Arrival Entry Form</span>
-                <span class="example-spacer"></span>
-              	<span flex></span>
-                <div class="example-container" fxFlex fxLayout="row" fxLayoutAlign="flex-end" fxFlex fxFlex.xl="20" fxFlex.lg="25" fxFlex.md="33.33" fxFlex.sm="50" fxFlex.xs="100">
-                  <div class="form-group">
-                    <!-- [disabled]="!formGroup.valid" -->
-                    <button type="submit" mat-raised-button color="primary" >Submit</button>
-                  </div>
-                </div>
+                <!-- <span class="example-spacer"></span>
+              	<span flex></span> -->
+                
+              </mat-toolbar-row>
             </mat-toolbar>
         </div>
 
@@ -234,14 +231,19 @@
         </mat-form-field>
   </div>
 
+  
           </div>
     
-          <!-- <div fxLayout="row" fxLayout="row wrap">
-              
-             
+           <div fxLayout="row" fxLayout="row wrap" fxFlex="50" fxFlex.lt-sm="100">
+            <div fxFlex fxLayout="row" class="example-container" fxFlex.xl="20" fxFlex.lg="25" fxFlex.md="33.33" fxFlex.sm="50" fxFlex.xs="100">
+              <div class="form-element">
+                <!-- [disabled]="!formGroup.valid" -->
+                <button type="submit" mat-raised-button color="primary" >Submit</button>
+              </div>
+            </div>           
           </div>
     
-          <div fxLayout="row" fxLayout="row wrap">
+        <!--  <div fxLayout="row" fxLayout="row wrap">
               
           </div>
     
@@ -266,7 +268,6 @@
     
  </form>
     </div>
-      
 </div>
 </body>
 </html>

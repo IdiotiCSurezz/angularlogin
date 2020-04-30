@@ -1,20 +1,31 @@
      <mat-nav-list>
-        <div class="profile-card">
+        <!-- <div class="profile-card">
             <img src="assets/images/krishya.png" alt="Krishya">
             <div class="header">
                 <h3>Krishya IT</h3>
                 <h4>it@krishya.co</h4>
             </div>
-        </div>
+        </div> -->
     
-        <mat-divider></mat-divider>
+        <!-- <mat-divider></mat-divider>  -->
+
+        
     
         <a mat-list-item routerLinkActive="list-item-active" routerLink="/dashboard">
             <mat-icon>import_contacts</mat-icon>
             Dashboard</a>
-        <a mat-list-item routerLinkActive="list-item-active" routerLink="/import">
+        <a mat-list-item routerLinkActive="list-item-active" routerLink="/import/dataentry/arrivalentry">
             <mat-icon>contact_phone</mat-icon>
-            Import</a>
+            Arrival Entry</a>
+            <a mat-list-item routerLinkActive="list-item-active" routerLink="/import/datareport/arrivalreport">
+              <mat-icon>contact_phone</mat-icon>
+              Arrival Report</a>
+            <!-- <mat-nav-list class="sidenav-submenu">
+              <mat-icon>contact_phone</mat-icon>Import
+              <a mat-list-item > Submenu Item 1</a>
+              <a mat-list-item > Submenu Item 2</a>
+              
+            </mat-nav-list> -->
     
     
         <mat-divider></mat-divider>

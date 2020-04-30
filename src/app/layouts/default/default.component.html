@@ -11,7 +11,7 @@
 <!-- <app-footer></app-footer> -->
 
 <div class="container" [class.is-mobile]="mobileQuery.matches">
-    <app-header (toggleSideBarForMe)="sideBarToggler()"></app-header>
+    <app-header class="example-mat-toolbar" (toggleSideBarForMe)="sideBarToggler()"></app-header>
     <mat-sidenav-container
       class="sidenav-container"
       [style.marginTop.px]="mobileQuery.matches ? 0 : 0"

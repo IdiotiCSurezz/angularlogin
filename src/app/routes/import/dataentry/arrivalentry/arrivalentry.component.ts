@@ -7,11 +7,11 @@ import { first } from 'rxjs/operators';
 import { ApiService } from 'src/app/api.service';
 
 @Component({
-  selector: 'app-dashboard',
-  templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.scss']
+  selector: 'app-arrivalentry',
+  templateUrl: './arrivalentry.component.html',
+  styleUrls: ['./arrivalentry.component.scss']
 })
-export class DashboardComponent implements OnInit {
+export class ArrivalentryComponent implements OnInit {
 
   formGroup1: FormGroup;
   submitted = false;
