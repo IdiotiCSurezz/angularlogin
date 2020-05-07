@@ -8,7 +8,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './auth/home/home.component';
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
-import { RoutesModule } from './routes/routes.module';
+// import { RoutesModule } from './routes/routes.module';
 import { DefaultModule } from './layouts/default/default.module';
 // import { DefaultModule } from './layouts/default/default.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';

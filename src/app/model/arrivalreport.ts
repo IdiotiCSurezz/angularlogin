@@ -4,9 +4,10 @@ export class Arrivalreport {
   importer_name: string;
   shipper_name: string;
   cargo_name: string;
-  liner_name: string;
+  freedays: string;
   bl_number: string;
   bl_date: string;
-  load_port: string;
+  intending_agent: string;
+  contract_number: string;
   cfs: string;
 }

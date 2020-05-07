@@ -19,9 +19,9 @@ import {DataService} from 'src/app/service/data.service';
 })
 export class ArrivalreportComponent implements OnInit {
 
-    displayedColumns = ['id', 'etadate', 'importer_name', 
-    'shipper_name', 'cargo_name', 'liner_name', 'bl_number',
-     'bl_date', 'load_port', 'cfs'];
+    displayedColumns = ['id', 'importer_name', 
+    'shipper_name', 'cargo_name','bl_number',
+     'bl_date', 'etadate', 'freedays', 'cfs','intending_agent','contract_number' ];
     exampleDatabase: DataService | null;
     dataSource: ExampleDataSource | null;
     index: number;
@@ -33,7 +33,7 @@ export class ArrivalreportComponent implements OnInit {
   
     @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
     @ViewChild(MatSort, {static: true}) sort: MatSort;
-    // @ViewChild('filter',  {static: true}) filter: ElementRef;
+    @ViewChild('filter',  {static: true}) filter: ElementRef;
   
     ngOnInit() {
       this.loadData();
@@ -126,15 +126,15 @@ export class ArrivalreportComponent implements OnInit {
     public loadData() {
       this.exampleDatabase = new DataService(this.httpClient);
       this.dataSource = new ExampleDataSource(this.exampleDatabase, this.paginator, this.sort);
-      // fromEvent(this.filter.nativeElement, 'keyup')
-      //   // .debounceTime(150)
-      //   // .distinctUntilChanged()
-      //   .subscribe(() => {
-      //     if (!this.dataSource) {
-      //       return;
-      //     }
-      //     this.dataSource.filter = this.filter.nativeElement.value;
-      //   });
+      fromEvent(this.filter.nativeElement, 'keyup')
+        // .debounceTime(150)
+        // .distinctUntilChanged()
+        .subscribe(() => {
+          if (!this.dataSource) {
+            return;
+          }
+          this.dataSource.filter = this.filter.nativeElement.value;
+        });
     }
   }
   
@@ -177,7 +177,7 @@ export class ArrivalreportComponent implements OnInit {
           // Filter data
           this.filteredData = this._exampleDatabase.data.slice().filter((issue: Arrivalreport) => {
             const searchStr = (issue.id + issue.etadate + issue.importer_name + issue.shipper_name+ 
-              issue.cargo_name+ issue.liner_name+ issue.bl_date+ issue.load_port+ issue.cfs).toLowerCase();
+              issue.cargo_name+ issue.freedays+ issue.bl_date+issue.contract_number+ issue.intending_agent+ issue.cfs).toLowerCase();
             return searchStr.indexOf(this.filter.toLowerCase()) !== -1;
           });
   
@@ -211,10 +211,11 @@ export class ArrivalreportComponent implements OnInit {
           case 'importer_name ': [propertyA, propertyB] = [a.importer_name, b.importer_name]; break;
           case 'shipper_name ': [propertyA, propertyB] = [a.shipper_name, b.shipper_name]; break;
           case 'cargo_name ': [propertyA, propertyB] = [a.cargo_name, b.cargo_name]; break;
-          case 'liner_name ': [propertyA, propertyB] = [a.liner_name, b.liner_name]; break;
+          case 'freedays ': [propertyA, propertyB] = [a.freedays, b.freedays]; break;
           case 'bl_number  ': [propertyA, propertyB] = [a.bl_number, b.bl_number]; break;
           case 'bl_date  ': [propertyA, propertyB] = [a.bl_date, b.bl_date]; break;
-          case 'load_port  ': [propertyA, propertyB] = [a.load_port, b.load_port]; break;
+          case 'intending_agent  ': [propertyA, propertyB] = [a.intending_agent, b.intending_agent]; break;
+          case 'contract_number  ': [propertyA, propertyB] = [a.contract_number, b.contract_number]; break
           case 'cfs  ': [propertyA, propertyB] = [a.cfs, b.cfs]; break;
             
         }

@@ -4,7 +4,7 @@ import { Router, NavigationEnd, ActivatedRoute } from '@angular/router';
 import { FormGroup, FormControl, FormBuilder, Validators, NgForm } from '@angular/forms';
 import { validateHorizontalPosition } from '@angular/cdk/overlay';
 import { first } from 'rxjs/operators';
-import { ApiService } from 'src/app/api.service';
+import { ApiService } from 'src/app/service/api.service';
 
 @Component({
   selector: 'app-arrivalentry',

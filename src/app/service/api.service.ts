@@ -1,8 +1,8 @@
 import { Injectable, Output, EventEmitter } from '@angular/core';
 import { map } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
-import { Users } from './model/users';
-import { Arrival } from './model/arrival';
+import { Users } from '../model/users';
+import { Arrival } from '../model/arrival';
 
 @Injectable({
 providedIn: 'root'

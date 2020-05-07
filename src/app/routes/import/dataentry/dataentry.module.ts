@@ -12,5 +12,6 @@ import { MaterialModule } from 'src/app/layouts/default/material.module';
     SharedModule,
     DataentryRoutingModule
   ]
+  
 })
 export class DataentryModule { }

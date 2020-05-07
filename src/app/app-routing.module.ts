@@ -6,7 +6,7 @@ import { RegisterComponent } from './auth/register/register.component';
 import { DefaultComponent } from './layouts/default/default.component';
 import { DashboardComponent } from './routes/dashboard/dashboard.component';
 // import { ImportModule } from './routes/import/import.module';
-import { AuthguardGuard } from './authguard.guard';
+import { AuthguardGuard } from './auth/authguard.guard';
 
 const routes: Routes = [
 { path: '', component: LoginComponent },

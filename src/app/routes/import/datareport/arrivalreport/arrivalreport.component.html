@@ -1,10 +1,6 @@
 
 <div class="container mat-elevation-z8">
-  <!-- <div class="form">
-    <mat-form-field floatPlaceholder="never" color="accent">
-      <input matInput #filter placeholder="Filter issues">
-    </mat-form-field>
-  </div> -->
+
   
   <div >
     <mat-toolbar >
@@ -21,6 +17,12 @@
     </mat-toolbar>
 </div>
 
+<div class="form">
+  <mat-form-field floatPlaceholder="never" color="accent">
+    <input matInput #filter placeholder="Filter all columns">
+  </mat-form-field>
+</div>
+
   <mat-table #table [dataSource]="dataSource" matSort class="mat-cell">
     ng update @angular/cli @angular/core
     <!--- Note that these columns can be defined in any order.
@@ -30,11 +32,6 @@
     <ng-container matColumnDef="id">
       <mat-header-cell *matHeaderCellDef mat-sort-header>Id</mat-header-cell>
       <mat-cell *matCellDef="let row" >{{row.id}}</mat-cell>
-    </ng-container>
-
-    <ng-container matColumnDef="etadate">
-      <mat-header-cell *matHeaderCellDef mat-sort-header>ETA Date</mat-header-cell>
-      <mat-cell *matCellDef="let row"> {{row.etadate}}</mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="importer_name">
@@ -54,9 +51,16 @@
       <mat-cell *matCellDef="let row"> {{row.cargo_name}}</mat-cell>
     </ng-container>
 
-    <ng-container matColumnDef="liner_name">
-      <mat-header-cell *matHeaderCellDef mat-sort-header>Liner Name</mat-header-cell>
-      <mat-cell *matCellDef="let row"> {{row.liner_name}}</mat-cell>
+
+    <ng-container matColumnDef="etadate">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>ETA Date</mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.etadate}}</mat-cell>
+    </ng-container>
+
+   
+    <ng-container matColumnDef="freedays">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Free Days</mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.freedays}}</mat-cell>
     </ng-container>
 
     
@@ -72,14 +76,25 @@
       <mat-cell *matCellDef="let row"> {{row.bl_date}}</mat-cell>
     </ng-container>
 
-    <ng-container matColumnDef="load_port">
+    <!-- <ng-container matColumnDef="load_port">
       <mat-header-cell *matHeaderCellDef mat-sort-header>Load Port</mat-header-cell>
       <mat-cell *matCellDef="let row"> {{row.load_port}}</mat-cell>
-    </ng-container>
+    </ng-container> -->
 
     <ng-container matColumnDef="cfs">
       <mat-header-cell *matHeaderCellDef mat-sort-header>CFS</mat-header-cell>
       <mat-cell *matCellDef="let row"> {{row.cfs}}</mat-cell>
+    </ng-container>
+
+    
+    <ng-container matColumnDef="intending_agent">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Agent</mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.intending_agent}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="contract_number">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Contract-no</mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.contract_number}}</mat-cell>
     </ng-container>
 
     <!-- actions -->
