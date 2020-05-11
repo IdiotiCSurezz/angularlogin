@@ -1,7 +1,7 @@
-
-<div class="container mat-elevation-z8">
-  
-  <div >
+<mat-card class="example-card">
+<div fxLayout="column"  class="krl-row"  [ngClass.xs]="'components-container-xs'"  fxLayoutGap="20px">
+  <div fxFlex class="krl-col" fxLayoutGap="20px">
+    <mat-card-content>
     <mat-toolbar >
       <mat-toolbar-row>
         <span class="fill-remaining-space">Dashboard</span>
@@ -11,5 +11,27 @@
     
       </mat-toolbar-row>
     </mat-toolbar>
+    <mat-card>
+      <div class="form">
+        <mat-form-field appearance="outline">
+          <mat-label>Filtered Columns</mat-label>
+          <mat-select>
+            <mat-option *ngFor="let column of columns" [value]="column.value">
+              {{column.viewValue}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <span class="spacer"></span>
+        <button type="submit" mat-raised-button color="primary" (click)="createComponent()">Add Filter</button>
+      </div>
+      <div>
+        <ng-template #viewContainerRef></ng-template>
+      </div>    
+    </mat-card>
+
+    
+   
+  </mat-card-content>
 </div>
 </div>
+</mat-card>

@@ -8,6 +8,12 @@
   .spacer {
     flex: 1 1 auto;
   }
+
+  .example-card {
+    max-width: 100%;
+    width: auto;
+    margin: 10px 10px 10px 10px ;
+  } 
   
   /* Filter */
   .form {
@@ -38,17 +44,17 @@
   
   .mat-cell:nth-child(1),
   .mat-header-cell:nth-child(1){
-    flex: 0 0 5%;
+    flex: 0 0 3%;
   }
   
   .mat-cell:nth-child(2),
   .mat-header-cell:nth-child(2){
-    flex: 0 0 10%;
+    flex: 0 0 8%;
   }
   
   .mat-cell:nth-child(3),
   .mat-header-cell:nth-child(3){
-    flex: 0 0 10%;
+    flex: 0 0 8%;
   }
 
   
@@ -59,12 +65,12 @@
   
   .mat-cell:nth-child(5),
   .mat-header-cell:nth-child(5){
-    flex: 0 0 12%;
+    flex: 0 0 10%;
   }
   
   .mat-cell:nth-child(6),
   .mat-header-cell:nth-child(6){
-    flex: 0 0 8%;
+    flex: 0 0 7%;
   }
   
   .mat-cell:nth-child(7),
@@ -79,5 +85,18 @@
   
   .mat-cell:nth-child(9),
   .mat-header-cell:nth-child(9){
-    flex: 0 0 10%;
+    flex: 0 0 8%;
+  }
+
+  .mat-cell:nth-child(10),
+  .mat-header-cell:nth-child(10){
+    flex: 0 0 8%;
+  }
+  .mat-cell:nth-child(11),
+  .mat-header-cell:nth-child(11){
+    flex: 0 0 8%;
+  }
+  .mat-cell:nth-child(12),
+  .mat-header-cell:nth-child(12){
+    flex: 0 0 8%;
   }

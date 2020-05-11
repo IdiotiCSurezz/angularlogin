@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { DefaultComponent } from './default.component';
 import { DashboardComponent } from 'src/app/routes/dashboard/dashboard.component';
 import { RouterModule } from '@angular/router';
+import {FilterComponent} from 'src/app/model/filter/filter.component';
 import { ArrivalentryComponent } from 'src/app/routes/import/dataentry/arrivalentry/arrivalentry.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 import {DataService} from 'src/app/service/data.service';

@@ -1,7 +1,8 @@
+<mat-card class="example-card">
 
-<div class="container mat-elevation-z8">
+<div fxLayout="column"  class="krl-row"  [ngClass.xs]="'components-container-xs'"  fxLayoutGap="10px">
 
-  
+  <mat-card-content>
   <div >
     <mat-toolbar >
       <mat-toolbar-row>
@@ -97,6 +98,12 @@
       <mat-cell *matCellDef="let row"> {{row.contract_number}}</mat-cell>
     </ng-container>
 
+    <ng-container matColumnDef="vessel_name">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Vessel Name</mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.vessel_name}}</mat-cell>
+    </ng-container>
+
+
     <!-- actions -->
     <!-- <ng-container matColumnDef="actions">
       <mat-header-cell *matHeaderCellDef>
@@ -131,4 +138,7 @@
                  [pageSize]="10"
                  [pageSizeOptions]="[5, 10, 25, 100]">
   </mat-paginator>
+</mat-card-content>
 </div>
+
+</mat-card>

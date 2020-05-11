@@ -13,13 +13,15 @@ import { DefaultModule } from './layouts/default/default.module';
 // import { DefaultModule } from './layouts/default/default.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
+import { FilterComponent } from './model/filter/filter.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    FilterComponent
   ],
   imports: [
     BrowserModule,

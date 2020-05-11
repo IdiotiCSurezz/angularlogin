@@ -11,7 +11,7 @@ providedIn: 'root'
 export class ApiService {
 redirectUrl: string;
 // baseUrl:string = "http://localhost/angular_admin/php";
-baseUrl:string = "http://krishya.co/php";
+baseUrl:string = "https://krishya.co/php";
 @Output() getLoggedInName: EventEmitter<any> = new EventEmitter();
 constructor(private httpClient : HttpClient) { }
 public userlogin(username, password) {

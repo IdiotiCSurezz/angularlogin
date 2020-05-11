@@ -21,7 +21,7 @@ export class ArrivalreportComponent implements OnInit {
 
     displayedColumns = ['id', 'importer_name', 
     'shipper_name', 'cargo_name','bl_number',
-     'bl_date', 'etadate', 'freedays', 'cfs','intending_agent','contract_number' ];
+     'bl_date', 'etadate', 'freedays', 'cfs','intending_agent','contract_number','vessel_name' ];
     exampleDatabase: DataService | null;
     dataSource: ExampleDataSource | null;
     index: number;
@@ -177,7 +177,7 @@ export class ArrivalreportComponent implements OnInit {
           // Filter data
           this.filteredData = this._exampleDatabase.data.slice().filter((issue: Arrivalreport) => {
             const searchStr = (issue.id + issue.etadate + issue.importer_name + issue.shipper_name+ 
-              issue.cargo_name+ issue.freedays+ issue.bl_date+issue.contract_number+ issue.intending_agent+ issue.cfs).toLowerCase();
+              issue.cargo_name+ issue.freedays+ issue.bl_date+issue.contract_number+ issue.intending_agent+ issue.cfs +issue.bl_number+issue.vessel_name).toLowerCase();
             return searchStr.indexOf(this.filter.toLowerCase()) !== -1;
           });
   
@@ -216,6 +216,7 @@ export class ArrivalreportComponent implements OnInit {
           case 'bl_date  ': [propertyA, propertyB] = [a.bl_date, b.bl_date]; break;
           case 'intending_agent  ': [propertyA, propertyB] = [a.intending_agent, b.intending_agent]; break;
           case 'contract_number  ': [propertyA, propertyB] = [a.contract_number, b.contract_number]; break
+          case 'vessel_name  ': [propertyA, propertyB] = [a.vessel_name, b.vessel_name]; break
           case 'cfs  ': [propertyA, propertyB] = [a.cfs, b.cfs]; break;
             
         }

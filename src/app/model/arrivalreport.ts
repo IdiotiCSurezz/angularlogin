@@ -9,5 +9,6 @@ export class Arrivalreport {
   bl_date: string;
   intending_agent: string;
   contract_number: string;
+  vessel_name: string;
   cfs: string;
 }
