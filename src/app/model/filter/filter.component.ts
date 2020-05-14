@@ -8,6 +8,7 @@ import { ArrivalreportComponent } from 'src/app/routes/import/datareport/arrival
   styleUrls: ['./filter.component.scss']
 })
 export class FilterComponent implements OnInit {
+  selectedtoppings: string;
   public unique_key: number;
   public parentRef: ArrivalreportComponent;
   dynamicForm: FormGroup;
@@ -37,6 +38,12 @@ export class FilterComponent implements OnInit {
   // remove_me(index) {
   //   this.filtersFormArray.removeAt(index);
   // }
+
+  ontoppingsSelection() {
+    console.log(this.selectedtoppings);
+    this.parentRef.selecting(this.selectedtoppings)
+  }
+
 
   remove_me() {
     console.log(this.unique_key)

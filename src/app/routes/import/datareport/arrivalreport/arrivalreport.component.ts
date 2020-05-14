@@ -33,6 +33,8 @@ import {DataService} from 'src/app/service/data.service';
 })
 export class ArrivalreportComponent implements OnInit {
 
+  filteredValues = { name:'' };
+
   columns: Column[] = [
     {value: 'Importer-0', viewValue: 'Importer Name'},
     {value: 'ETA-1', viewValue: 'ETA date'},
@@ -56,17 +58,17 @@ export class ArrivalreportComponent implements OnInit {
 
   @ViewChild("viewContainerRef", { read: ViewContainerRef })
   VCR: ViewContainerRef;
-  child_unique_key: number = 0;
+  child_unique_key: number = 1;
   componentsReferences = Array<ComponentRef<FilterComponent>>()
 
   constructor(public httpClient: HttpClient,
     public dialog: MatDialog,
     public dataService: DataService,
-    private CFR: ComponentFactoryResolver) {}
+    private CFR: ComponentFactoryResolver,public native: ElementRef) {}
 
   createComponent() {
     
-      console.log(this.columns.values['Select'])
+      // console.log(this.columns.values['Select'])
     let componentFactory = this.CFR.resolveComponentFactory(FilterComponent);
     let childComponentRef = this.VCR.createComponent(componentFactory);
     let filterComponent = childComponentRef.instance;
@@ -75,6 +77,14 @@ export class ArrivalreportComponent implements OnInit {
 
     // add reference for newly created component
     this.componentsReferences.push(childComponentRef);
+    }
+
+    selecting(value: any)
+    {
+      this.filteredValues['name'] = value;
+      this.dataSource.filter = JSON.stringify(this.filteredValues);
+      console.log(JSON.stringify(this.filteredValues))
+      // this.dataSource.filter  = this.customFilterPredicate();
     }
 
   remove(key: number) {
@@ -103,8 +113,7 @@ export class ArrivalreportComponent implements OnInit {
     index: number;
     id: number;
   
-  
-  
+
     @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
     @ViewChild(MatSort, {static: true}) sort: MatSort;
     @ViewChild('filter',  {static: true}) filter: ElementRef;
@@ -208,8 +217,21 @@ export class ArrivalreportComponent implements OnInit {
           if (!this.dataSource) {
             return;
           }
+        
           this.dataSource.filter = this.filter.nativeElement.value;
         });
+    }
+
+    customFilterPredicate() {
+      const myFilterPredicate = function(data:Arrivalreport, filter:string) :boolean {
+        let searchString = JSON.parse(filter);
+        let nameimporter = data.importer_name.toString().trim().toLowerCase().indexOf(searchString.name.toLowerCase()) !== -1
+        if (searchString.topFilter) {
+            return nameimporter 
+        } else {
+            return nameimporter        }
+      }
+      return myFilterPredicate;
     }
   }
   
@@ -234,6 +256,7 @@ export class ArrivalreportComponent implements OnInit {
       // Reset to the first page when the user changes the filter.
       this._filterChange.subscribe(() => this._paginator.pageIndex = 0);
     }
+
   
     /** Connect function called by the table to retrieve one stream containing the data to render. */
     connect(): Observable<Arrivalreport[]> {
