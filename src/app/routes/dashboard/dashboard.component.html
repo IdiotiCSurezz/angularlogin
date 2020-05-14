@@ -11,23 +11,7 @@
     
       </mat-toolbar-row>
     </mat-toolbar>
-    <mat-card>
-      <div class="form">
-        <mat-form-field appearance="outline">
-          <mat-label>Filtered Columns</mat-label>
-          <mat-select>
-            <mat-option *ngFor="let column of columns" [value]="column.value">
-              {{column.viewValue}}
-            </mat-option>
-          </mat-select>
-        </mat-form-field>
-        <span class="spacer"></span>
-        <button type="submit" mat-raised-button color="primary" (click)="createComponent()">Add Filter</button>
-      </div>
-      <div>
-        <ng-template #viewContainerRef></ng-template>
-      </div>    
-    </mat-card>
+   
 
     
    

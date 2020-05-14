@@ -1,0 +1,693 @@
+<!-- <p>be-status works!</p> -->
+<mat-card class="example-card">
+<div fxLayout="column"  class="krl-row"  [ngClass.xs]="'components-container-xs'"  fxLayoutGap="20px">
+
+    <div fxFlex class="krl-col">
+      <mat-card-content>
+    <form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+  
+          <!-- <div class="container">
+              <mat-toolbar color="primary">
+                  <span class="fill-remaining-space">BE Entry Form</span>
+                </mat-toolbar>
+          </div> -->
+          
+          <div >
+            <mat-toolbar >
+              <mat-toolbar-row>
+                <span class="fill-remaining-space">BE Entry Form</span>
+              </mat-toolbar-row>
+            </mat-toolbar>
+        </div>
+
+  
+      <div fxLayout="column"  class="krl-form-horizontal" fxLayoutAlign="space-around stretch" style="background-color: white;">
+          
+          <!-- <div fxLayout="row" fxLayout="row wrap"> -->
+            
+          <mat-horizontal-stepper [linear]="isLinear" #stepper>
+
+            <mat-step [stepControl]="firstFormGroup">
+              <form [formGroup]="firstFormGroup">
+                <ng-template matStepLabel>Fill BE detail FirstStage</ng-template>
+               <div fxLayout="row" fxLayout="row wrap">
+                  <div class="example-container" fxFlex.xl="20" fxFlex.lg="25" fxFlex.md="33.33" fxFlex.sm="50" fxFlex.xs="100">
+                    <mat-form-field appearance="outline" class="form-element">
+                      <mat-label class="form-label">Job Number</mat-label>
+                      <input matInput  formControlName="jobNumber" >
+                      <!-- <mat-error *ngIf="checkError('contractNumber', 'required')">Job Number Name is required</mat-error> -->
+                          
+                    </mat-form-field>
+                </div>
+                <div class="example-container" fxFlex.xl="20" fxFlex.lg="25" fxFlex.md="33.33" fxFlex.sm="50" fxFlex.xs="100">
+                  <mat-form-field appearance="outline" class="form-element">
+                    <mat-label class="form-label">Importer Name</mat-label>
+                    <input matInput  formControlName="importerName" >
+                    <!-- <mat-error *ngIf="checkError('contractNumber', 'required')">Importer Name is required</mat-error> -->
+                        
+                  </mat-form-field>
+              </div>
+                <div class="example-container" fxFlex.xl="20" fxFlex.lg="25" fxFlex.md="33.33" fxFlex.sm="50" fxFlex.xs="100">
+                    <mat-form-field appearance="outline" class="form-element">
+                        <mat-label class="form-label">Shipper Name</mat-label>
+                        <input matInput formControlName="shipperName" >
+                        <!-- <mat-error *ngIf="checkError('contractNumber', 'required')">Shipper Name is required</mat-error> -->
+                             
+                      </mat-form-field>
+                </div>
+                <div class="example-container" fxFlex.xl="20" fxFlex.lg="25" fxFlex.md="33.33" fxFlex.sm="50" fxFlex.xs="100">
+                  <mat-form-field appearance="outline" class="form-element">
+                    <mat-label class="form-label">Cargo Number</mat-label>
+                    <input matInput  formControlName="jobNumber" >
+                    <!-- <mat-error *ngIf="checkError('contractNumber', 'required')">Job Number Name is required</mat-error> -->
+                        
+                  </mat-form-field>
+              </div>
+              <div class="example-container" fxFlex.xl="20" fxFlex.lg="25" fxFlex.md="33.33" fxFlex.sm="50" fxFlex.xs="100">
+                <mat-form-field appearance="outline" class="form-element">
+                  <mat-label class="form-label">Tr Mode </mat-label>
+                  <input matInput  formControlName="importerName" >
+                  <!-- <mat-error *ngIf="checkError('contractNumber', 'required')">Importer Name is required</mat-error> -->
+                      
+                </mat-form-field>
+            </div>
+              <div class="example-container" fxFlex.xl="20" fxFlex.lg="25" fxFlex.md="33.33" fxFlex.sm="50" fxFlex.xs="100">
+                  <mat-form-field appearance="outline" class="form-element">
+                      <mat-label class="form-label">BE Number</mat-label>
+                      <input matInput formControlName="shipperName" >
+                      <!-- <mat-error *ngIf="checkError('contractNumber', 'required')">Shipper Name is required</mat-error> -->
+                           
+                    </mat-form-field>
+              </div>
+              <div class="example-container" fxFlex.xl="20" fxFlex.lg="25" fxFlex.md="33.33" fxFlex.sm="50" fxFlex.xs="100">
+                <mat-form-field appearance="outline" class="form-element">
+                  <mat-label class="form-label">BE Date</mat-label>
+                  <input matInput  formControlName="jobNumber" >
+                  <!-- <mat-error *ngIf="checkError('contractNumber', 'required')">Job Number Name is required</mat-error> -->
+                      
+                </mat-form-field>
+            </div>
+            <div class="example-container" fxFlex.xl="20" fxFlex.lg="25" fxFlex.md="33.33" fxFlex.sm="50" fxFlex.xs="100">
+              <mat-form-field appearance="outline" class="form-element">
+                <mat-label class="form-label">BE Type </mat-label>
+                <input matInput  formControlName="importerName" >
+                <!-- <mat-error *ngIf="checkError('contractNumber', 'required')">Importer Name is required</mat-error> -->
+                    
+              </mat-form-field>
+          </div>
+            <div class="example-container" fxFlex.xl="20" fxFlex.lg="25" fxFlex.md="33.33" fxFlex.sm="50" fxFlex.xs="100">
+                <mat-form-field appearance="outline" class="form-element">
+                    <mat-label class="form-label">Filing Status</mat-label>
+                    <input matInput formControlName="shipperName" >
+                    <!-- <mat-error *ngIf="checkError('contractNumber', 'required')">Shipper Name is required</mat-error> -->
+                         
+                  </mat-form-field>
+            </div>
+            <div class="example-container" fxFlex.xl="20" fxFlex.lg="25" fxFlex.md="33.33" fxFlex.sm="50" fxFlex.xs="100">
+              <mat-form-field appearance="outline" class="form-element">
+                <mat-label class="form-label">MBL Number</mat-label>
+                <input matInput  formControlName="jobNumber" >
+                <!-- <mat-error *ngIf="checkError('contractNumber', 'required')">Job Number Name is required</mat-error> -->
+                    
+              </mat-form-field>
+          </div>
+          <div class="example-container" fxFlex.xl="20" fxFlex.lg="25" fxFlex.md="33.33" fxFlex.sm="50" fxFlex.xs="100">
+            <mat-form-field appearance="outline" class="form-element">
+              <mat-label class="form-label">MBL Date </mat-label>
+              <input matInput  formControlName="importerName" >
+              <!-- <mat-error *ngIf="checkError('contractNumber', 'required')">Importer Name is required</mat-error> -->
+                  
+            </mat-form-field>
+        </div>
+          <div class="example-container" fxFlex.xl="20" fxFlex.lg="25" fxFlex.md="33.33" fxFlex.sm="50" fxFlex.xs="100">
+              <mat-form-field appearance="outline" class="form-element">
+                  <mat-label class="form-label">HBL Number</mat-label>
+                  <input matInput formControlName="shipperName" >
+                  <!-- <mat-error *ngIf="checkError('contractNumber', 'required')">Shipper Name is required</mat-error> -->
+                       
+                </mat-form-field>
+          </div>
+          <div class="example-container" fxFlex.xl="20" fxFlex.lg="25" fxFlex.md="33.33" fxFlex.sm="50" fxFlex.xs="100">
+            <mat-form-field appearance="outline" class="form-element">
+                <mat-label class="form-label">HBL Date</mat-label>
+                <input matInput  formControlName="jobNumber" >
+                <!-- <mat-error *ngIf="checkError('contractNumber', 'required')">Job Number Name is required</mat-error> -->
+                    
+              </mat-form-field>
+          </div>
+          <div class="example-container" fxFlex.xl="20" fxFlex.lg="25" fxFlex.md="33.33" fxFlex.sm="50" fxFlex.xs="100">
+            <mat-form-field appearance="outline" class="form-element">
+              <mat-label class="form-label">IGM Number</mat-label>
+              <input matInput  formControlName="importerName" >
+              <!-- <mat-error *ngIf="checkError('contractNumber', 'required')">Importer Name is required</mat-error> -->
+                  
+            </mat-form-field>
+        </div>
+          <div class="example-container" fxFlex.xl="20" fxFlex.lg="25" fxFlex.md="33.33" fxFlex.sm="50" fxFlex.xs="100">
+              <mat-form-field appearance="outline" class="form-element">
+                  <mat-label class="form-label">IGM Date</mat-label>
+                  <input matInput formControlName="shipperName" >
+                  <!-- <mat-error *ngIf="checkError('contractNumber', 'required')">Shipper Name is required</mat-error> -->
+                       
+                </mat-form-field>
+          </div>
+
+               </div>
+
+                <div>
+                  <button mat-button matStepperNext>Next</button>
+                </div>
+              </form>
+            </mat-step>
+
+            <mat-step [stepControl]="secondFormGroup">
+              <form [formGroup]="secondFormGroup">
+                <ng-template matStepLabel>Fill BE detail SecondStage </ng-template>
+               
+
+               <div fxLayout="row" fxLayout="row wrap">
+                <div class="example-container" fxFlex.xl="20" fxFlex.lg="25" fxFlex.md="33.33" fxFlex.sm="50" fxFlex.xs="100">
+                  <mat-form-field appearance="outline" class="form-element">
+                    <mat-label class="form-label">BL Gross Weight</mat-label>
+                    <input matInput  formControlName="jobNumber" >
+                    <!-- <mat-error *ngIf="checkError('contractNumber', 'required')">Job Number Name is required</mat-error> -->
+                        
+                  </mat-form-field>
+              </div>
+              <div class="example-container" fxFlex.xl="20" fxFlex.lg="25" fxFlex.md="33.33" fxFlex.sm="50" fxFlex.xs="100">
+                <mat-form-field appearance="outline" class="form-element">
+                  <mat-label class="form-label">Gross Weight Type</mat-label>
+                  <input matInput  formControlName="importerName" >
+                  <!-- <mat-error *ngIf="checkError('contractNumber', 'required')">Importer Name is required</mat-error> -->
+                      
+                </mat-form-field>
+            </div>
+              <div class="example-container" fxFlex.xl="20" fxFlex.lg="25" fxFlex.md="33.33" fxFlex.sm="50" fxFlex.xs="100">
+                  <mat-form-field appearance="outline" class="form-element">
+                      <mat-label class="form-label">Net Weight</mat-label>
+                      <input matInput formControlName="shipperName" >
+                      <!-- <mat-error *ngIf="checkError('contractNumber', 'required')">Shipper Name is required</mat-error> -->
+                           
+                    </mat-form-field>
+              </div>
+              <div class="example-container" fxFlex.xl="20" fxFlex.lg="25" fxFlex.md="33.33" fxFlex.sm="50" fxFlex.xs="100">
+                <mat-form-field appearance="outline" class="form-element">
+                  <mat-label class="form-label">Net Weight Type</mat-label>
+                  <input matInput  formControlName="jobNumber" >
+                  <!-- <mat-error *ngIf="checkError('contractNumber', 'required')">Job Number Name is required</mat-error> -->
+                      
+                </mat-form-field>
+            </div>
+            <div class="example-container" fxFlex.xl="20" fxFlex.lg="25" fxFlex.md="33.33" fxFlex.sm="50" fxFlex.xs="100">
+              <mat-form-field appearance="outline" class="form-element">
+                <mat-label class="form-label">Packages</mat-label>
+                <input matInput  formControlName="importerName" >
+                <!-- <mat-error *ngIf="checkError('contractNumber', 'required')">Importer Name is required</mat-error> -->
+                    
+              </mat-form-field>
+          </div>
+            <div class="example-container" fxFlex.xl="20" fxFlex.lg="25" fxFlex.md="33.33" fxFlex.sm="50" fxFlex.xs="100">
+                <mat-form-field appearance="outline" class="form-element">
+                    <mat-label class="form-label">Packages Type</mat-label>
+                    <input matInput formControlName="shipperName" >
+                    <!-- <mat-error *ngIf="checkError('contractNumber', 'required')">Shipper Name is required</mat-error> -->
+                         
+                  </mat-form-field>
+            </div>
+            <div class="example-container" fxFlex.xl="20" fxFlex.lg="25" fxFlex.md="33.33" fxFlex.sm="50" fxFlex.xs="100">
+              <mat-form-field appearance="outline" class="form-element">
+                <mat-label class="form-label">Container Number</mat-label>
+                <input matInput  formControlName="jobNumber" >
+                <!-- <mat-error *ngIf="checkError('contractNumber', 'required')">Job Number Name is required</mat-error> -->
+                    
+              </mat-form-field>
+          </div>
+          <div class="example-container" fxFlex.xl="20" fxFlex.lg="25" fxFlex.md="33.33" fxFlex.sm="50" fxFlex.xs="100">
+            <mat-form-field appearance="outline" class="form-element">
+              <mat-label class="form-label">Container Type</mat-label>
+              <input matInput  formControlName="importerName" >
+              <!-- <mat-error *ngIf="checkError('contractNumber', 'required')">Importer Name is required</mat-error> -->
+                  
+            </mat-form-field>
+        </div>
+          <div class="example-container" fxFlex.xl="20" fxFlex.lg="25" fxFlex.md="33.33" fxFlex.sm="50" fxFlex.xs="100">
+              <mat-form-field appearance="outline" class="form-element">
+                  <mat-label class="form-label">FCL/LCL</mat-label>
+                  <input matInput formControlName="shipperName" >
+                  <!-- <mat-error *ngIf="checkError('contractNumber', 'required')">Shipper Name is required</mat-error> -->
+                       
+                </mat-form-field>
+          </div>
+          <div class="example-container" fxFlex.xl="20" fxFlex.lg="25" fxFlex.md="33.33" fxFlex.sm="50" fxFlex.xs="100">
+            <mat-form-field appearance="outline" class="form-element">
+              <mat-label class="form-label">Country of Origin</mat-label>
+              <input matInput  formControlName="jobNumber" >
+              <!-- <mat-error *ngIf="checkError('contractNumber', 'required')">Job Number Name is required</mat-error> -->
+                  
+            </mat-form-field>
+        </div>
+        <div class="example-container" fxFlex.xl="20" fxFlex.lg="25" fxFlex.md="33.33" fxFlex.sm="50" fxFlex.xs="100">
+          <mat-form-field appearance="outline" class="form-element">
+            <mat-label class="form-label">Port of Origin</mat-label>
+            <input matInput  formControlName="importerName" >
+            <!-- <mat-error *ngIf="checkError('contractNumber', 'required')">Importer Name is required</mat-error> -->
+                
+          </mat-form-field>
+      </div>
+        <div class="example-container" fxFlex.xl="20" fxFlex.lg="25" fxFlex.md="33.33" fxFlex.sm="50" fxFlex.xs="100">
+            <mat-form-field appearance="outline" class="form-element">
+                <mat-label class="form-label">Shipping Line</mat-label>
+                <input matInput formControlName="shipperName" >
+                <!-- <mat-error *ngIf="checkError('contractNumber', 'required')">Shipper Name is required</mat-error> -->
+                     
+              </mat-form-field>
+        </div>
+        <div class="example-container" fxFlex.xl="20" fxFlex.lg="25" fxFlex.md="33.33" fxFlex.sm="50" fxFlex.xs="100">
+          <mat-form-field appearance="outline" class="form-element">
+            <mat-label class="form-label">Vessel Name</mat-label>
+            <input matInput  formControlName="jobNumber" >
+            <!-- <mat-error *ngIf="checkError('contractNumber', 'required')">Job Number Name is required</mat-error> -->
+                
+          </mat-form-field>
+      </div>
+      <div class="example-container" fxFlex.xl="20" fxFlex.lg="25" fxFlex.md="33.33" fxFlex.sm="50" fxFlex.xs="100">
+        <mat-form-field appearance="outline" class="form-element">
+          <mat-label class="form-label">Voyage No</mat-label>
+          <input matInput  formControlName="importerName" >
+          <!-- <mat-error *ngIf="checkError('contractNumber', 'required')">Importer Name is required</mat-error> -->
+              
+        </mat-form-field>
+    </div>
+      <div class="example-container" fxFlex.xl="20" fxFlex.lg="25" fxFlex.md="33.33" fxFlex.sm="50" fxFlex.xs="100">
+          <mat-form-field appearance="outline" class="form-element">
+              <mat-label class="form-label">Certificate Number</mat-label>
+              <input matInput formControlName="shipperName" >
+              <!-- <mat-error *ngIf="checkError('contractNumber', 'required')">Shipper Name is required</mat-error> -->
+                   
+            </mat-form-field>
+      </div>
+
+              </div>
+
+                <div>
+                  <button mat-button matStepperPrevious>Back</button>
+                  <button mat-button matStepperNext>Next</button>
+                </div>
+              </form>
+            </mat-step>
+            
+            <mat-step [stepControl]="thirdFormGroup">
+              <form [formGroup]="thirdFormGroup">
+                <ng-template matStepLabel>Fill BE Detail ThirdStage </ng-template>
+                <div fxLayout="row" fxLayout="row wrap">
+                  <div class="example-container" fxFlex.xl="20" fxFlex.lg="25" fxFlex.md="33.33" fxFlex.sm="50" fxFlex.xs="100">
+                    <mat-form-field appearance="outline" class="form-element">
+                      <mat-label class="form-label">Certificate Date</mat-label>
+                      <input matInput  formControlName="jobNumber" >
+                      <!-- <mat-error *ngIf="checkError('contractNumber', 'required')">Job Number Name is required</mat-error> -->
+                          
+                    </mat-form-field>
+                </div>
+                <div class="example-container" fxFlex.xl="20" fxFlex.lg="25" fxFlex.md="33.33" fxFlex.sm="50" fxFlex.xs="100">
+                  <mat-form-field appearance="outline" class="form-element">
+                    <mat-label class="form-label">Invoice Number</mat-label>
+                    <input matInput  formControlName="importerName" >
+                    <!-- <mat-error *ngIf="checkError('contractNumber', 'required')">Importer Name is required</mat-error> -->
+                        
+                  </mat-form-field>
+              </div>
+                <div class="example-container" fxFlex.xl="20" fxFlex.lg="25" fxFlex.md="33.33" fxFlex.sm="50" fxFlex.xs="100">
+                    <mat-form-field appearance="outline" class="form-element">
+                        <mat-label class="form-label">Invoice Date</mat-label>
+                        <input matInput formControlName="shipperName" >
+                        <!-- <mat-error *ngIf="checkError('contractNumber', 'required')">Shipper Name is required</mat-error> -->
+                             
+                      </mat-form-field>
+                </div>
+
+                <div class="example-container" fxFlex.xl="20" fxFlex.lg="25" fxFlex.md="33.33" fxFlex.sm="50" fxFlex.xs="100">
+                  <mat-form-field appearance="outline" class="form-element">
+                    <mat-label class="form-label">Terms</mat-label>
+                    <input matInput  formControlName="jobNumber" >
+                    <!-- <mat-error *ngIf="checkError('contractNumber', 'required')">Job Number Name is required</mat-error> -->
+                        
+                  </mat-form-field>
+              </div>
+              <div class="example-container" fxFlex.xl="20" fxFlex.lg="25" fxFlex.md="33.33" fxFlex.sm="50" fxFlex.xs="100">
+                <mat-form-field appearance="outline" class="form-element">
+                  <mat-label class="form-label">Invoice Value</mat-label>
+                  <input matInput  formControlName="importerName" >
+                  <!-- <mat-error *ngIf="checkError('contractNumber', 'required')">Importer Name is required</mat-error> -->
+                      
+                </mat-form-field>
+            </div>
+              <div class="example-container" fxFlex.xl="20" fxFlex.lg="25" fxFlex.md="33.33" fxFlex.sm="50" fxFlex.xs="100">
+                  <mat-form-field appearance="outline" class="form-element">
+                      <mat-label class="form-label">Currency</mat-label>
+                      <input matInput formControlName="shipperName" >
+                      <!-- <mat-error *ngIf="checkError('contractNumber', 'required')">Shipper Name is required</mat-error> -->
+                           
+                    </mat-form-field>
+              </div>
+
+              <div class="example-container" fxFlex.xl="20" fxFlex.lg="25" fxFlex.md="33.33" fxFlex.sm="50" fxFlex.xs="100">
+                <mat-form-field appearance="outline" class="form-element">
+                  <mat-label class="form-label">Exchange Rate</mat-label>
+                  <input matInput  formControlName="jobNumber" >
+                  <!-- <mat-error *ngIf="checkError('contractNumber', 'required')">Job Number Name is required</mat-error> -->
+                      
+                </mat-form-field>
+            </div>
+            <div class="example-container" fxFlex.xl="20" fxFlex.lg="25" fxFlex.md="33.33" fxFlex.sm="50" fxFlex.xs="100">
+              <mat-form-field appearance="outline" class="form-element">
+                <mat-label class="form-label">Fright </mat-label>
+                <input matInput  formControlName="importerName" >
+                <!-- <mat-error *ngIf="checkError('contractNumber', 'required')">Importer Name is required</mat-error> -->
+                    
+              </mat-form-field>
+          </div>
+            <div class="example-container" fxFlex.xl="20" fxFlex.lg="25" fxFlex.md="33.33" fxFlex.sm="50" fxFlex.xs="100">
+                <mat-form-field appearance="outline" class="form-element">
+                    <mat-label class="form-label">Insurance</mat-label>
+                    <input matInput formControlName="shipperName" >
+                    <!-- <mat-error *ngIf="checkError('contractNumber', 'required')">Shipper Name is required</mat-error> -->
+                         
+                  </mat-form-field>
+            </div>
+            <div class="example-container" fxFlex.xl="20" fxFlex.lg="25" fxFlex.md="33.33" fxFlex.sm="50" fxFlex.xs="100">
+              <mat-form-field appearance="outline" class="form-element">
+                <mat-label class="form-label">High Sea Sale Rate</mat-label>
+                <input matInput  formControlName="jobNumber" >
+                <!-- <mat-error *ngIf="checkError('contractNumber', 'required')">Job Number Name is required</mat-error> -->
+                    
+              </mat-form-field>
+          </div>
+          <div class="example-container" fxFlex.xl="20" fxFlex.lg="25" fxFlex.md="33.33" fxFlex.sm="50" fxFlex.xs="100">
+            <mat-form-field appearance="outline" class="form-element">
+              <mat-label class="form-label">High Sea Sale Charge</mat-label>
+              <input matInput  formControlName="importerName" >
+              <!-- <mat-error *ngIf="checkError('contractNumber', 'required')">Importer Name is required</mat-error> -->
+                  
+            </mat-form-field>
+        </div>
+          <div class="example-container" fxFlex.xl="20" fxFlex.lg="25" fxFlex.md="33.33" fxFlex.sm="50" fxFlex.xs="100">
+              <mat-form-field appearance="outline" class="form-element">
+                  <mat-label class="form-label">Mischelance Charges</mat-label>
+                  <input matInput formControlName="shipperName" >
+                  <!-- <mat-error *ngIf="checkError('contractNumber', 'required')">Shipper Name is required</mat-error> -->
+                       
+                </mat-form-field>
+          </div>
+
+          <div class="example-container" fxFlex.xl="20" fxFlex.lg="25" fxFlex.md="33.33" fxFlex.sm="50" fxFlex.xs="100">
+            <mat-form-field appearance="outline" class="form-element">
+              <mat-label class="form-label">Discount</mat-label>
+              <input matInput  formControlName="jobNumber" >
+              <!-- <mat-error *ngIf="checkError('contractNumber', 'required')">Job Number Name is required</mat-error> -->
+                  
+            </mat-form-field>
+        </div>
+        <div class="example-container" fxFlex.xl="20" fxFlex.lg="25" fxFlex.md="33.33" fxFlex.sm="50" fxFlex.xs="100">
+          <mat-form-field appearance="outline" class="form-element">
+            <mat-label class="form-label">SVB</mat-label>
+            <input matInput  formControlName="importerName" >
+            <!-- <mat-error *ngIf="checkError('contractNumber', 'required')">Importer Name is required</mat-error> -->
+                
+          </mat-form-field>
+      </div>
+        <div class="example-container" fxFlex.xl="20" fxFlex.lg="25" fxFlex.md="33.33" fxFlex.sm="50" fxFlex.xs="100">
+            <mat-form-field appearance="outline" class="form-element">
+                <mat-label class="form-label">Unit Price</mat-label>
+                <input matInput formControlName="shipperName" >
+                <!-- <mat-error *ngIf="checkError('contractNumber', 'required')">Shipper Name is required</mat-error> -->
+                     
+              </mat-form-field>
+        </div>
+
+
+                </div>
+
+                <div>
+                  <button mat-button matStepperPrevious>Back</button>
+                  <button mat-button matStepperNext>Next</button>
+                </div>
+              </form>
+            </mat-step>  
+
+            <mat-step [stepControl]="fourthFormGroup" >
+              <form [formGroup]="fourthFormGroup">
+                <ng-template matStepLabel>Fill BE Detail FinalStage </ng-template>
+
+                <div fxLayout="row" fxLayout="row wrap">
+                  <div class="example-container" fxFlex.xl="20" fxFlex.lg="25" fxFlex.md="33.33" fxFlex.sm="50" fxFlex.xs="100">
+                    <mat-form-field appearance="outline" class="form-element">
+                      <mat-label class="form-label">CTH No</mat-label>
+                      <input matInput  formControlName="jobNumber" >
+                      <!-- <mat-error *ngIf="checkError('contractNumber', 'required')">Job Number Name is required</mat-error> -->
+                          
+                    </mat-form-field>
+                </div>
+                <div class="example-container" fxFlex.xl="20" fxFlex.lg="25" fxFlex.md="33.33" fxFlex.sm="50" fxFlex.xs="100">
+                  <mat-form-field appearance="outline" class="form-element">
+                    <mat-label class="form-label">No of Item</mat-label>
+                    <input matInput  formControlName="importerName" >
+                    <!-- <mat-error *ngIf="checkError('contractNumber', 'required')">Importer Name is required</mat-error> -->
+                        
+                  </mat-form-field>
+              </div>
+                <div class="example-container" fxFlex.xl="20" fxFlex.lg="25" fxFlex.md="33.33" fxFlex.sm="50" fxFlex.xs="100">
+                    <mat-form-field appearance="outline" class="form-element">
+                        <mat-label class="form-label">PQ</mat-label>
+                        <input matInput formControlName="shipperName" >
+                        <!-- <mat-error *ngIf="checkError('contractNumber', 'required')">Shipper Name is required</mat-error> -->
+                             
+                      </mat-form-field>
+                </div>
+                <div class="example-container" fxFlex.xl="20" fxFlex.lg="25" fxFlex.md="33.33" fxFlex.sm="50" fxFlex.xs="100">
+                  <mat-form-field appearance="outline" class="form-element">
+                    <mat-label class="form-label">FSSAI</mat-label>
+                    <input matInput  formControlName="jobNumber" >
+                    <!-- <mat-error *ngIf="checkError('contractNumber', 'required')">Job Number Name is required</mat-error> -->
+                        
+                  </mat-form-field>
+              </div>
+              <div class="example-container" fxFlex.xl="20" fxFlex.lg="25" fxFlex.md="33.33" fxFlex.sm="50" fxFlex.xs="100">
+                <mat-form-field appearance="outline" class="form-element">
+                  <mat-label class="form-label">License No</mat-label>
+                  <input matInput  formControlName="importerName" >
+                  <!-- <mat-error *ngIf="checkError('contractNumber', 'required')">Importer Name is required</mat-error> -->
+                      
+                </mat-form-field>
+            </div>
+              <div class="example-container" fxFlex.xl="20" fxFlex.lg="25" fxFlex.md="33.33" fxFlex.sm="50" fxFlex.xs="100">
+                  <mat-form-field appearance="outline" class="form-element">
+                      <mat-label class="form-label">License Date</mat-label>
+                      <input matInput formControlName="shipperName" >
+                      <!-- <mat-error *ngIf="checkError('contractNumber', 'required')">Shipper Name is required</mat-error> -->
+                           
+                    </mat-form-field>
+              </div>
+              <div class="example-container" fxFlex.xl="20" fxFlex.lg="25" fxFlex.md="33.33" fxFlex.sm="50" fxFlex.xs="100">
+                <mat-form-field appearance="outline" class="form-element">
+                  <mat-label class="form-label">Assessable Value</mat-label>
+                  <input matInput  formControlName="jobNumber" >
+                  <!-- <mat-error *ngIf="checkError('contractNumber', 'required')">Job Number Name is required</mat-error> -->
+                      
+                </mat-form-field>
+            </div>
+            <div class="example-container" fxFlex.xl="20" fxFlex.lg="25" fxFlex.md="33.33" fxFlex.sm="50" fxFlex.xs="100">
+              <mat-form-field appearance="outline" class="form-element">
+                <mat-label class="form-label">Enhanceable Assessable Value</mat-label>
+                <input matInput  formControlName="importerName" >
+                <!-- <mat-error *ngIf="checkError('contractNumber', 'required')">Importer Name is required</mat-error> -->
+                    
+              </mat-form-field>
+          </div>
+            <div class="example-container" fxFlex.xl="20" fxFlex.lg="25" fxFlex.md="33.33" fxFlex.sm="50" fxFlex.xs="100">
+                <mat-form-field appearance="outline" class="form-element">
+                    <mat-label class="form-label">Duty Amount</mat-label>
+                    <input matInput formControlName="shipperName" >
+                    <!-- <mat-error *ngIf="checkError('contractNumber', 'required')">Shipper Name is required</mat-error> -->
+                         
+                  </mat-form-field>
+            </div>
+            <div class="example-container" fxFlex.xl="20" fxFlex.lg="25" fxFlex.md="33.33" fxFlex.sm="50" fxFlex.xs="100">
+              <mat-form-field appearance="outline" class="form-element">
+                <mat-label class="form-label">IGST Duty Amount</mat-label>
+                <input matInput  formControlName="jobNumber" >
+                <!-- <mat-error *ngIf="checkError('contractNumber', 'required')">Job Number Name is required</mat-error> -->
+                    
+              </mat-form-field>
+          </div>
+          <div class="example-container" fxFlex.xl="20" fxFlex.lg="25" fxFlex.md="33.33" fxFlex.sm="50" fxFlex.xs="100">
+            <mat-form-field appearance="outline" class="form-element">
+              <mat-label class="form-label">Ex Bond BE No</mat-label>
+              <input matInput  formControlName="importerName" >
+              <!-- <mat-error *ngIf="checkError('contractNumber', 'required')">Importer Name is required</mat-error> -->
+                  
+            </mat-form-field>
+        </div>
+          <div class="example-container" fxFlex.xl="20" fxFlex.lg="25" fxFlex.md="33.33" fxFlex.sm="50" fxFlex.xs="100">
+              <mat-form-field appearance="outline" class="form-element">
+                  <mat-label class="form-label">Ex Bond BE Date</mat-label>
+                  <input matInput formControlName="shipperName" >
+                  <!-- <mat-error *ngIf="checkError('contractNumber', 'required')">Shipper Name is required</mat-error> -->
+                       
+                </mat-form-field>
+          </div>
+
+          <div class="example-container" fxFlex.xl="20" fxFlex.lg="25" fxFlex.md="33.33" fxFlex.sm="50" fxFlex.xs="100">
+            <mat-form-field appearance="outline" class="form-element">
+              <mat-label class="form-label">BE Status</mat-label>
+              <input matInput  formControlName="jobNumber" >
+              <!-- <mat-error *ngIf="checkError('contractNumber', 'required')">Job Number Name is required</mat-error> -->
+                  
+            </mat-form-field>
+        </div>
+        <div class="example-container" fxFlex.xl="20" fxFlex.lg="25" fxFlex.md="33.33" fxFlex.sm="50" fxFlex.xs="100">
+          <mat-form-field appearance="outline" class="form-element">
+            <mat-label class="form-label">Assessment Date</mat-label>
+            <input matInput  formControlName="importerName" >
+            <!-- <mat-error *ngIf="checkError('contractNumber', 'required')">Importer Name is required</mat-error> -->
+                
+          </mat-form-field>
+      </div>
+        <div class="example-container" fxFlex.xl="20" fxFlex.lg="25" fxFlex.md="33.33" fxFlex.sm="50" fxFlex.xs="100">
+            <mat-form-field appearance="outline" class="form-element">
+                <mat-label class="form-label">Duty Payment Date</mat-label>
+                <input matInput formControlName="shipperName" >
+                <!-- <mat-error *ngIf="checkError('contractNumber', 'required')">Shipper Name is required</mat-error> -->
+                     
+              </mat-form-field>
+        </div>
+        <div class="example-container" fxFlex.xl="20" fxFlex.lg="25" fxFlex.md="33.33" fxFlex.sm="50" fxFlex.xs="100">
+          <mat-form-field appearance="outline" class="form-element">
+            <mat-label class="form-label">Interest Amount</mat-label>
+            <input matInput  formControlName="jobNumber" >
+            <!-- <mat-error *ngIf="checkError('contractNumber', 'required')">Job Number Name is required</mat-error> -->
+                
+          </mat-form-field>
+      </div>
+      <div class="example-container" fxFlex.xl="20" fxFlex.lg="25" fxFlex.md="33.33" fxFlex.sm="50" fxFlex.xs="100">
+        <mat-form-field appearance="outline" class="form-element">
+          <mat-label class="form-label">OCC Date</mat-label>
+          <input matInput  formControlName="importerName" >
+          <!-- <mat-error *ngIf="checkError('contractNumber', 'required')">Importer Name is required</mat-error> -->
+              
+        </mat-form-field>
+    </div>
+      <div class="example-container" fxFlex.xl="20" fxFlex.lg="25" fxFlex.md="33.33" fxFlex.sm="50" fxFlex.xs="100">
+          <mat-form-field appearance="outline" class="form-element">
+              <mat-label class="form-label">Remark</mat-label>
+              <input matInput formControlName="shipperName" >
+              <!-- <mat-error *ngIf="checkError('contractNumber', 'required')">Shipper Name is required</mat-error> -->
+                   
+            </mat-form-field>
+      </div>
+      <div class="example-container" fxFlex.xl="20" fxFlex.lg="25" fxFlex.md="33.33" fxFlex.sm="50" fxFlex.xs="100">
+        <mat-form-field appearance="outline" class="form-element">
+          <mat-label class="form-label">Assessment</mat-label>
+          <input matInput  formControlName="jobNumber" >
+          <!-- <mat-error *ngIf="checkError('contractNumber', 'required')">Job Number Name is required</mat-error> -->
+              
+        </mat-form-field>
+    </div>
+    <div class="example-container" fxFlex.xl="20" fxFlex.lg="25" fxFlex.md="33.33" fxFlex.sm="50" fxFlex.xs="100">
+      <mat-form-field appearance="outline" class="form-element">
+        <mat-label class="form-label">First Check</mat-label>
+        <input matInput  formControlName="importerName" >
+        <!-- <mat-error *ngIf="checkError('contractNumber', 'required')">Importer Name is required</mat-error> -->
+            
+      </mat-form-field>
+  </div>
+    <div class="example-container" fxFlex.xl="20" fxFlex.lg="25" fxFlex.md="33.33" fxFlex.sm="50" fxFlex.xs="100">
+        <mat-form-field appearance="outline" class="form-element">
+            <mat-label class="form-label">Examination</mat-label>
+            <input matInput formControlName="shipperName" >
+            <!-- <mat-error *ngIf="checkError('contractNumber', 'required')">Shipper Name is required</mat-error> -->
+                 
+          </mat-form-field>
+    </div>
+    <div class="example-container" fxFlex.xl="20" fxFlex.lg="25" fxFlex.md="33.33" fxFlex.sm="50" fxFlex.xs="100">
+      <mat-form-field appearance="outline" class="form-element">
+        <mat-label class="form-label">Out of Charge</mat-label>
+        <input matInput  formControlName="jobNumber" >
+        <!-- <mat-error *ngIf="checkError('contractNumber', 'required')">Job Number Name is required</mat-error> -->
+            
+      </mat-form-field>
+  </div>
+  <div class="example-container" fxFlex.xl="20" fxFlex.lg="25" fxFlex.md="33.33" fxFlex.sm="50" fxFlex.xs="100">
+    <mat-form-field appearance="outline" class="form-element">
+      <mat-label class="form-label">Noting</mat-label>
+      <input matInput  formControlName="importerName" >
+      <!-- <mat-error *ngIf="checkError('contractNumber', 'required')">Importer Name is required</mat-error> -->
+          
+    </mat-form-field>
+</div>
+  <div class="example-container" fxFlex.xl="20" fxFlex.lg="25" fxFlex.md="33.33" fxFlex.sm="50" fxFlex.xs="100">
+      <mat-form-field appearance="outline" class="form-element">
+          <mat-label class="form-label">Duty Received</mat-label>
+          <input matInput formControlName="shipperName" >
+          <!-- <mat-error *ngIf="checkError('contractNumber', 'required')">Shipper Name is required</mat-error> -->
+               
+        </mat-form-field>
+  </div>
+  <div class="example-container" fxFlex.xl="20" fxFlex.lg="25" fxFlex.md="33.33" fxFlex.sm="50" fxFlex.xs="100">
+    <mat-form-field appearance="outline" class="form-element">
+      <mat-label class="form-label">Duty Paid</mat-label>
+      <input matInput  formControlName="jobNumber" >
+      <!-- <mat-error *ngIf="checkError('contractNumber', 'required')">Job Number Name is required</mat-error> -->
+          
+    </mat-form-field>
+</div>
+<div class="example-container" fxFlex.xl="20" fxFlex.lg="25" fxFlex.md="33.33" fxFlex.sm="50" fxFlex.xs="100">
+  <mat-form-field appearance="outline" class="form-element">
+    <mat-label class="form-label">Delivery</mat-label>
+    <input matInput  formControlName="importerName" >
+    <!-- <mat-error *ngIf="checkError('contractNumber', 'required')">Importer Name is required</mat-error> -->
+        
+  </mat-form-field>
+</div>
+<div class="example-container" fxFlex.xl="20" fxFlex.lg="25" fxFlex.md="33.33" fxFlex.sm="50" fxFlex.xs="100">
+    <mat-form-field appearance="outline" class="form-element">
+        <mat-label class="form-label">Average Time</mat-label>
+        <input matInput formControlName="shipperName" >
+        <!-- <mat-error *ngIf="checkError('contractNumber', 'required')">Shipper Name is required</mat-error> -->
+             
+      </mat-form-field>
+</div>
+  </div>
+             
+
+          <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button (click)="stepper.reset()">Reset</button>
+          </div>
+
+          <div fxLayout="row" fxLayout="row wrap">
+            <div class="form-element">
+              <button  mat-raised-button color="primary" type="submit" class="button" >Upload into Server </button>
+            </div>
+            
+          </div> 
+      
+               
+              </form>
+            </mat-step>
+
+          </mat-horizontal-stepper>
+           <!-- </div> -->
+          
+      </div>
+   
+   </form>
+  </mat-card-content>
+  </div>
+
+  </div>
+</mat-card>
+  
+
+  
+  
+  

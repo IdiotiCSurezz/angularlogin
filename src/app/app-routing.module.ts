@@ -26,11 +26,11 @@ const routes: Routes = [
 //     component: ImportComponent
 //   }]
 // ,canActivate: [AuthguardGuard]},
-{ path: 'import/dataentry/arrivalentry', 
+{ path: 'import/dataentry', 
 component: DefaultComponent,
 loadChildren: () => import('./routes/import/dataentry/dataentry.module').then(m => m.DataentryModule)
 ,canActivate: [AuthguardGuard] },
-{ path: 'import/datareport/arrivalreport', 
+{ path: 'import/datareport', 
 component: DefaultComponent,
 loadChildren: () => import('./routes/import/datareport/datareport.module').then(m => m.DatareportModule)
  },

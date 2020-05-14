@@ -1,6 +1,7 @@
 import { Component, OnInit,ComponentRef } from '@angular/core';
 import {FormControl} from '@angular/forms';
-import { DashboardComponent } from 'src/app/routes/dashboard/dashboard.component';
+import { FormGroup, FormBuilder, FormArray } from '@angular/forms';
+import { ArrivalreportComponent } from 'src/app/routes/import/datareport/arrivalreport/arrivalreport.component';
 @Component({
   selector: 'app-filter',
   templateUrl: './filter.component.html',
@@ -8,11 +9,13 @@ import { DashboardComponent } from 'src/app/routes/dashboard/dashboard.component
 })
 export class FilterComponent implements OnInit {
   public unique_key: number;
-  public parentRef: DashboardComponent;
-  constructor() { }
+  public parentRef: ArrivalreportComponent;
+  dynamicForm: FormGroup;
+  
+  constructor(private fb: FormBuilder) { }
 
   toppingsControl = new FormControl([]);
-  toppingList: string[] = ['User 1', 'User 2', 'User 3', 'User 4', 'User 5', 'User 6'];
+  toppingList: string[] = ['test', 'test1', 'User 3', 'User 4', 'User 5', 'User 6'];
 
   onToppingRemoved(topping: string) {
     const toppings = this.toppingsControl.value as string[];
@@ -27,12 +30,24 @@ export class FilterComponent implements OnInit {
     }
   }
 
+  get filtersFormArray() {
+    return (<FormArray>this.dynamicForm.get('filters'));
+  }
+
+  // remove_me(index) {
+  //   this.filtersFormArray.removeAt(index);
+  // }
+
   remove_me() {
     console.log(this.unique_key)
     this.parentRef.remove(this.unique_key)
+    
   }
 
   ngOnInit(): void {
+    this.dynamicForm = this.fb.group({
+      filters: this.fb.array([])
+    });
   }
 
 

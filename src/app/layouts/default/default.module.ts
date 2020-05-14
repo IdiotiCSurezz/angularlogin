@@ -5,6 +5,9 @@ import { DashboardComponent } from 'src/app/routes/dashboard/dashboard.component
 import { RouterModule } from '@angular/router';
 import {FilterComponent} from 'src/app/model/filter/filter.component';
 import { ArrivalentryComponent } from 'src/app/routes/import/dataentry/arrivalentry/arrivalentry.component';
+import { CopydocComponent } from 'src/app/routes/import/dataentry/copydoc/copydoc.component';
+import { BeStatusComponent } from 'src/app/routes/import/dataentry/be-status/be-status.component';
+import { OriginaldocComponent } from 'src/app/routes/import/dataentry/originaldoc/originaldoc.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 import {DataService} from 'src/app/service/data.service';
 // import { MatSidenavModule } from '@angular/material/sidenav';
@@ -22,7 +25,10 @@ import { ArrivalreportComponent } from 'src/app/routes/import/datareport/arrival
     DefaultComponent,
     DashboardComponent,
     ArrivalentryComponent,
-    ArrivalreportComponent
+    ArrivalreportComponent,
+    CopydocComponent,
+    BeStatusComponent,
+    OriginaldocComponent
   ],
   imports: [
     CommonModule,

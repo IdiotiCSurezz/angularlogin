@@ -17,13 +17,32 @@
       </mat-toolbar-row>
     </mat-toolbar>
 </div>
-
-<div class="form">
+<mat-card>
+  <div class="form">
+    <mat-form-field appearance="outline">
+      <mat-label>Filtered Columns</mat-label>
+      <mat-select>
+        <mat-option *ngFor="let column of columns" [value]="column.value">
+          {{column.viewValue}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <span class="spacer"></span>
+    <button type="submit" mat-raised-button color="primary" (click)="createComponent()">Add Filter</button>
+  </div>
+  </mat-card>
+  <div>
+    <mat-card>
+    <ng-template #viewContainerRef></ng-template>
+    </mat-card>
+  </div>    
+<!-- </mat-card> -->
+<!-- <div class="form">
   <mat-form-field floatPlaceholder="never" color="accent">
     <input matInput #filter placeholder="Filter all columns">
   </mat-form-field>
-</div>
-
+</div> -->
+<mat-card>
   <mat-table #table [dataSource]="dataSource" matSort class="mat-cell">
     ng update @angular/cli @angular/core
     <!--- Note that these columns can be defined in any order.
@@ -126,7 +145,7 @@
     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
     <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
   </mat-table>
-
+</mat-card>
 
   <div class="no-results" [style.display]="dataSource.renderedData.length == 0 ? '' : 'none'">
     No results
